@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Cliente{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Editar Cliente</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" value="{{ cliente.nome }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ cliente.email }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa</label>
+                <select class="form-select" id="empresa" name="empresa_id" required>
+                    {% for empresa in empresas %}
+                        <option value="{{ empresa._id }}" {% if cliente.empresa_id == empresa._id %}selected{% endif %}>
+                            {{ empresa.nome }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+{% endblock %}

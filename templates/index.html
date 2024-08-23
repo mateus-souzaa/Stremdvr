@@ -4,104 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Estilo para fixar o rodapé no final da página */
-        html, body {
-            height: 100%;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        .container {
-            flex: 1;
-        }
-        footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            background-color: #0d6efd;
-            color: white;
-        }
-    </style>
-    <title>Página Principal</title>
+    <title>Monitoramento Seguro - Teste</title>
 </head>
-<body class="bg-light">
+<body>
+    <div class="container mt-5">
+        <h2>Monitoramento Seguro - Página de Testes</h2>
+        <div class="list-group">
+            <h3>Clientes</h3>
+            <a href="/cadastros/cliente/novo" class="list-group-item list-group-item-action">Cadastrar Novo Cliente</a>
+            <a href="/cadastros/cliente/listar" class="list-group-item list-group-item-action">Listar Clientes</a>
 
-    <!-- Cabeçalho -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">Monitoramento Seguro</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('cadastros') }}">Cadastros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('visualizacao') }}">Visualização</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Configurações</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <h3>Empresas</h3>
+            <a href="/cadastros/empresa/novo" class="list-group-item list-group-item-action">Cadastrar Nova Empresa</a>
+            <a href="/cadastros/empresa/listar" class="list-group-item list-group-item-action">Listar Empresas</a>
 
-    <!-- Banner Principal -->
-    <header class="bg-primary text-white text-center py-5 mb-4">
-        <div class="container">
-            <h1 class="fw-light">Bem-vindo ao Monitoramento Seguro</h1>
-            <p class="lead">Gerencie suas câmeras de segurança de forma fácil e eficiente</p>
-        </div>
-    </header>
+            <h3>NVRs</h3>
+            <a href="/cadastros/nvr/novo" class="list-group-item list-group-item-action">Cadastrar Novo NVR</a>
+            <a href="/cadastros/nvr/listar" class="list-group-item list-group-item-action">Listar NVRs</a>
 
-    <!-- Seções Principais -->
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Gerenciar Cadastros</h5>
-                        <p class="card-text">Adicione, edite e remova usuários e dispositivos.</p>
-                        <a href="{{ url_for('cadastros') }}" class="btn btn-primary">Gerenciar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Ver Câmeras</h5>
-                        <p class="card-text">Acesse as imagens das câmeras de segurança em tempo real.</p>
-                        <a href="{{ url_for('visualizacao') }}" class="btn btn-primary">Acessar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Configurações</h5>
-                        <p class="card-text">Ajuste as configurações do sistema conforme suas necessidades.</p>
-                        <a href="#" class="btn btn-primary">Configurar</a>
-                    </div>
-                </div>
-            </div>
+            <h3>Outros</h3>
+            <!-- Adicione mais links conforme necessário -->
         </div>
     </div>
-
-    <!-- Rodapé -->
-    <footer class="text-white text-center py-3 mt-4">
-        <div class="container">
-            <p class="mb-0">© 2024 Monitoramento Seguro. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

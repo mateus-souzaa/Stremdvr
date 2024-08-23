@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de Empresa{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Cadastrar Nova Empresa</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome da Empresa:</label>
+                <input type="text" name="nome" class="form-control" id="nome" required>
+            </div>
+            <div class="mb-3">
+                <label for="cnpj" class="form-label">CNPJ:</label>
+                <input type="text" name="cnpj" class="form-control" id="cnpj" required>
+            </div>
+            <div class="mb-3">
+                <label for="endereco" class="form-label">Endereço:</label>
+                <input type="text" name="endereco" class="form-control" id="endereco" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="alert mt-3">
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+    </div>
+{% endblock %}

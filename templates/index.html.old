@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+    <header class="bg-primary text-white text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="fw-light">Bem-vindo ao Monitoramento Seguro</h1>
+            <p class="lead">Gerencie suas câmeras de segurança de forma fácil e eficiente</p>
+        </div>
+    </header>
+
+    <!-- Seções Principais -->
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Gerenciar Cadastros</h5>
+                    <p class="card-text">Adicione, edite e remova usuários e dispositivos.</p>
+                    <a href="#" class="btn btn-primary">Gerenciar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Ver Câmeras</h5>
+                    <p class="card-text">Acesse as imagens das câmeras de segurança em tempo real.</p>
+                    <a href="#" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Configurações</h5>
+                    <p class="card-text">Ajuste as configurações do sistema conforme suas necessidades.</p>
+                    <a href="#" class="btn btn-primary">Configurar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

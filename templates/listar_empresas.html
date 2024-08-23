@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Listar Empresas{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Listar Empresas</h2>
+        <a href="{{ url_for('empresa_novo') }}" class="btn btn-primary mb-3">Nova Empresa</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CNPJ</th>
+                    <th>Endereço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empresa in empresas %}
+                <tr>
+                    <td>{{ empresa.nome }}</td>
+                    <td>{{ empresa.cnpj }}</td>
+                    <td>{{ empresa.endereco }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_empresa', empresa_id=empresa._id) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{{ url_for('deletar_empresa', empresa_id=empresa._id) }}" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

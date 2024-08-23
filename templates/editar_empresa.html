@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Empresa{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Editar Empresa</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" name="nome" class="form-control" id="nome" value="{{ empresa.nome }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="cnpj" class="form-label">CNPJ:</label>
+                <input type="text" name="cnpj" class="form-control" id="cnpj" value="{{ empresa.cnpj }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="endereco" class="form-label">Endereço:</label>
+                <input type="text" name="endereco" class="form-control" id="endereco" value="{{ empresa.endereco }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de Cliente{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Cadastrar Novo Cliente</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" name="nome" class="form-control" id="nome" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha:</label>
+                <input type="password" name="senha" class="form-control" id="senha" required>
+            </div>
+            <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa:</label>
+                <select name="empresa" class="form-select" id="empresa" required>
+                    <option value="" disabled selected>Selecione uma empresa</option>
+                    {% for empresa in empresas %}
+                        <option value="{{ empresa['_id'] }}">{{ empresa['nome'] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="alert mt-3">
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+    </div>
+{% endblock %}
